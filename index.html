@@ -1,40 +1,88 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site Simples</title>
-    </head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Curiosidades sobre Animais</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #e0f7fa;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .botoes {
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 15px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      background-color: #00796b;
+      color: white;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #004d40;
+    }
+
+    #curiosidade {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #333;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
 <body>
 
-<header>
-    <h1>Bem-vindo ao Meu Site</h1>
-</header>
+<h1>Descubra Curiosidades sobre Animais</h1>
 
-<nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#servicos">Serviços</a>
-    <a href="#contato">Contato</a>
-</nav>
+<div class="botoes">
+  <button onclick="mostrarCuriosidade('cachorro')">Cachorro</button>
+  <button onclick="mostrarCuriosidade('gato')">Gato</button>
+  <button onclick="mostrarCuriosidade('elefante')">Elefante</button>
+  <button onclick="mostrarCuriosidade('tigre')">Tigre</button>
+</div>
 
-<section id="sobre">
-    <h2>Sobre Nós</h2>
-    <p>Este é um site feito pela aluna Ana Beatriz Ozorio de Souza, Número 2, Turma 2 B</p>
-</section>
+<div id="curiosidade">Clique em um animal para ver uma curiosidade!</div>
 
-<section id="servicos">
-    <h2>Serviços</h2>
-    <p>Estou aprendendo a usar html.</p>
-</section>
+<script>
+  function mostrarCuriosidade(animal) {
+    let curiosidadeTexto = '';
 
-<section id="contato">
-    <h2>Contato</h2>
-    <p>Você pode entrar em contato conosco pelo e-mail: contato@meusite.com</p>
-</section>
+    switch(animal) {
+      case 'cachorro':
+        curiosidadeTexto = 'Os cães foram um dos primeiros animais domesticados pelo ser humano, há cerca de 15.000 anos.';
+        break;
+      case 'gato':
+        curiosidadeTexto = 'Gatos têm um sentido de audição muito apurado e podem ouvir sons que os humanos não percebem.';
+        break;
+      case 'elefante':
+        curiosidadeTexto = 'Elefantes são os maiores animais terrestres e têm uma memória impressionante.';
+        break;
+      case 'tigre':
+        curiosidadeTexto = 'Tigres têm pelagem listrada, o que lhes ajuda na camuflagem na floresta densa.';
+        break;
+      default:
+        curiosidadeTexto = 'Clique em um animal para ver uma curiosidade!';
+    }
 
-<footer>
-    <p>&copy; 2023 Meu Site Simples. Todos os direitos reservados.</p>
-</footer>
+    document.getElementById('curiosidade').textContent = curiosidadeTexto;
+  }
+</script>
 
 </body>
 </html>
